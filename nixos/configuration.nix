@@ -42,12 +42,10 @@
 
   # FIXME: Add the rest of your current configuration
   # Bootloader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    efiSupport = false;
+    device = lib.mkForce "/dev/vda";
   };
-
-  boot.initrd.luks.devices."luks-b38bbb39-7faa-49c9-beb4-e86e3c176fd0".device = "/dev/disk/by-uuid/b38bbb39-7faa-49c9-beb4-e86e3c176fd0";
 
   networking = {
     networkmanager.enable = true;
