@@ -72,9 +72,6 @@
             ./nixos/configuration.nix
           ]
           ++ (with nixos-hardware.nixosModules; [
-            common-cpu-intel
-            common-gpu-nvidia-nonprime
-            common-pc-laptop-ssd
           ]);
       };
     };
